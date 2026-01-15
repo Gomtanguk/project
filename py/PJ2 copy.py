@@ -27,15 +27,7 @@ def releasing():
 # A-i 이동 포인트(상단/접근 기준점)
 A_i_Z = 70
 A_i_safe_Z = 65
-A_i_X1 = 400
-A_i_X2 = 450
-A_i_X3 = 400
-A_i_Y1 = 400
-A_i_Y2 = 400
-A_i_Y3 = 400
-A_i_X1 = 400
-A_i_X1 = 400
-A_i_X1 = 400
+
 
 A_1 = posx(400.32,142.28,A_i_Z,     90.02,179.97,89.99); A_1_safe = posx(400.32,142.28,A_i_safe_Z, 90.02,179.97,89.99)
 A_2 = posx(450.32,142.28,A_i_Z,     90.02,179.97,89.99); A_2_safe = posx(450.32,142.28,A_i_safe_Z, 90.02,179.97,89.99)
@@ -62,7 +54,7 @@ LOW_LINE  = [Low_0,  Low_1,  Low_2]
 # -------------------------
 # Params (튜닝값)
 # -------------------------
-VEL_MOVE  = 80
+VEL_MOVE  = 200
 ACC_MOVE  = 160
 VEL_PROBE = 10
 ACC_PROBE = 20
@@ -85,7 +77,7 @@ PLACE_SAFE_UP = 50.0
 # (10) 분류별 내려가기 상대값(안전 높이에서 아래로)
 DZ_PLACE_HIGH = 35.0
 DZ_PLACE_MID  = 55.0
-DZ_PLACE_LOW  = 75.0
+DZ_PLACE_LOW  = 65.0
 
 # 분류 임계 Z (측정된 z_contact 기준)
 Z_TH_HIGH = 60.0
@@ -135,7 +127,7 @@ def move_to_grip_relative_from_here():
     set_ref_coord(DR_BASE)
 
 def move_to_grip_relative_from_safe():
-    # (6) 그립위치 이동(상대적이동) : tool 기준
+    # 안전위치 이동(상대적이동) : tool 기준
     set_ref_coord(DR_TOOL)
     movel(posx(GRIP_DX, GRIP_DY, -GRIP_DZ_SAFE, 0,0,0),
           vel=150, acc=ACC_PROBE, ref=DR_TOOL, mod=DR_MV_MOD_REL)
