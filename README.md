@@ -55,12 +55,24 @@
 - `v0.111` → 그립 타임아웃 버그 수정
 
 ### 4.3 네이밍(권장)
-- Pose: `pose_<zone>_<action>_<index>[_safe|_pre|_post]`  
+
+#### 4.3.1 기본 표기 규칙(Case)
+- **snake_case**: 변수/함수/모듈(파일)명, ROS 토픽/서비스/파라미터
+  - 예) `grip_delay_s`, `open_gripper()`, `error_handling.drl`, `/tube/status`, `use_sim_time`
+- **PascalCase(CapWords)**: 클래스명(사용 시)
+  - 예) `TubeTransferProcess`, `GripperInterface`
+- **UPPER_SNAKE_CASE**: 상수(고정 값)
+  - 예) `MAX_RETRY`, `SAFE_Z_MM`
+- **camelCase**: 기본적으로 사용하지 않음(외부 API/기존 규격에 맞출 때만 예외)
+
+#### 4.3.2 프로젝트 네이밍 규칙
+- Pose: `pose_<zone>_<action>_<index>[_safe|_pre|_post]`
   - 예) `pose_a_storage_pick_1_safe`, `pose_b_storage_place_3_pre`
-- I/O: `do_*`(출력), `di_*`(입력)  
+- I/O: `do_*`(출력), `di_*`(입력)
   - 예) `do_gripper_open`, `di_grip_ok`
-- 단위 포함 권장: `_mm`, `_s`, `_deg`  
+- 단위 포함 권장: `_mm`, `_s`, `_deg`
   - 예) `safe_z_mm`, `grip_delay_s`
+
 
 ---
 
