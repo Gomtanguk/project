@@ -25,11 +25,11 @@
 ---
 
 ## 3. 시스템 구성 (System Architecture)
-- Robot: Doosan Collaborative Robot (예: M0609 등)
+- Robot: Doosan Collaborative Robot (M0609)
 - Controller: DART Platform, DART Studio
 - Runtime: DART Studio (DRL)
 - End-effector: 전동 그리퍼 (Digital Output 제어)
-- Sensors (Optional): DI 기반 그립 완료/검체 존재/도어/인터락 등
+- Sensors (Optional): DI 기반 그립 완료/Force 등
 
 ---
 
