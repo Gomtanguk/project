@@ -33,7 +33,38 @@
 
 ---
 
-## 4. 폴더 구조 (Structure)
+## 4. 코드 규칙
+
+### 4.1 버전 표기
+- 모든 DRL 파일 최상단에 버전을 표기합니다.
+
+예:
+
+    # Version: v0.000
+    # Change: Initial draft
+
+### 4.2 버전 증가 규칙
+- `vX.X00` : 소수점 첫째 자리(X) ↑ → **기능 구현/변화**
+- `v0.0Y0` : 소수점 둘째 자리(Y) ↑ → **변수/파라미터/상수/구조(경미) 수정**
+- `v0.00Z` : 소수점 셋째 자리(Z) ↑ → **버그 수정**
+
+예시:
+- `v0.000` → 초기
+- `v0.100` → 기능 추가(예: 로그 기반 라우팅 구현)
+- `v0.110` → 파라미터/변수명 정리
+- `v0.111` → 그립 타임아웃 버그 수정
+
+### 4.3 네이밍(권장)
+- Pose: `pose_<zone>_<action>_<index>[_safe|_pre|_post]`  
+  - 예) `pose_a_storage_pick_1_safe`, `pose_b_storage_place_3_pre`
+- I/O: `do_*`(출력), `di_*`(입력)  
+  - 예) `do_gripper_open`, `di_grip_ok`
+- 단위 포함 권장: `_mm`, `_s`, `_deg`  
+  - 예) `safe_z_mm`, `grip_delay_s`
+
+---
+
+## 5. 폴더 구조 (Structure)
 ```text
 .
 ├── drl/
